@@ -40,7 +40,7 @@ This app is a calculator that determines a person's age in various ways: in seco
 |---|---|---|
 | If a user without a calculated age enters a number they will receive an error message. | (na) | "Please first calculate your age" |
 | If a 30 year old user enters anything other than a number they will receive an error message.  | fifty | "Enter a valid number" |
-| If a 30 year old user enters '0', they will receive an error message. | 0 | "Enter a valid number" |
+| If a 30 year old user enters a number less than 1, they will receive an error message. | 0 | "Enter a valid number" |
 | If a 30 year old user enters '80', a number of '50' will be returned. | 80 | 50 |
 | If a 30 year old user enters '20', a number of '-10' will be returned and a message will appear telling them they may die at any moment. | 20 | -10 |
 
