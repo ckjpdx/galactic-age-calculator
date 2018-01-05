@@ -82,6 +82,32 @@ gulp.task('build', ['clean'], function(){
   gulp.start('cssBuild');
 });
 
+gulp.task('serve', ['build'], function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+
+  gulp.watch(['js/*.js'], ['jsBuild']);
+  gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['*.html'], ['htmlBuild']);
+  gulp.watch('scss/*.scss', ['cssBuild']);
+});
+
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
+gulp.task('htmlBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
 gulp.task('cssBuild', ['bower'], function(){
   return gulp.src('scss/*.scss')
   .pipe(sourcemaps.init())
