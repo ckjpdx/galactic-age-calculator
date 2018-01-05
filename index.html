@@ -12,12 +12,32 @@
     <h1>Galactic Age Calculator</h1>
     <form>
       <fieldset>
-        <h1>Age in Seconds</h1>
         <p>Enter Birthday</p>
         <input id="input-bday" type="text" name="firstname" placeholder="mm-dd-yyyy">
-        <button id="submit-bday" type="button">Submit</button>
-        <h2 id="age-in-seconds">Your age in seconds is: <span></span></h2>
+        <p>Enter your demographic's life expectancy in years</p>
+        <input id="input-life-expectancy" type="text" value="80">
+        <button id="submit-info" type="button">Submit</button>
       </fieldset>
   </form>
+  <h2 id="age-in-seconds">Your age in seconds is: <span></span></h2>
+  <h1>Your age, in years, relative to these planets:</h1>
+  <div>
+    <h2>
+      Earth: <span id="planet-age-0"></span>
+    </h2>
+    <h2>
+      Mercury: <span id="planet-age-1"></span>
+    </h2>
+    <h2>
+      Venus: <span id="planet-age-2"></span>
+    </h2>
+    <h2>
+      Mars: <span id="planet-age-3"></span>
+    </h2>
+    <h2>
+      Jupiter: <span id="planet-age-4"></span>
+    </h2>
+  </div>
+  <h2>Your estimated time in planet years until death: <span id="life-remaining"></span></h2>
   </body>
 </html>
