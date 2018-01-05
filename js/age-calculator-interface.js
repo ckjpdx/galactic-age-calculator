@@ -1,5 +1,6 @@
 import { getAgeSeconds } from './../js/age-calculator.js';
 $(document).ready(function(){
-  $('h1').text(getAgeSeconds());
+  let userAge = 1;
+  $('h1').text(getAgeSeconds(userAge));
 
 });

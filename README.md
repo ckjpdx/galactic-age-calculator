@@ -29,6 +29,14 @@ This app is a calculator that determines a person's age in various ways: in seco
 
 2. Specs
   * Take a birth date from the user and determine how many years old they are. Input is a date in the form of a string and output is a number in years.
+
+| Spec Description |  Input | Output  |
+|---|---|---|
+| If a user enters a no information for their birthday an error will display | (na) | Enter your bday in the correct format |
+| If a user enters a date in an incorrect format a message will display | 1990-244-44 | Enter your bday in the correct format |
+| If a user enters a bday later than the current date an error will display | 1-1-2050 | Enter the year you were born. |
+| If a user enters a correct date in the past a number in years will return | 1-1-1984 | 34 |
+
   * Take an age from the user via form and convert it into seconds (backend logic). Input is a number in years and output is a number in seconds.
     * Return the age of the user in Mercury years
     * Return the age of the user in Venus years
