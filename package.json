@@ -1,0 +1,30 @@
+{
+  "name": "galactic-age-calculator",
+  "version": "1.0.0",
+  "description": "calculate age in years on other planets based on their orbital period",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browserify": "^15.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noodlebrains/galactic-age-calculator.git"
+  },
+  "author": "Chris K Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noodlebrains/galactic-age-calculator/issues"
+  },
+  "homepage": "https://github.com/noodlebrains/galactic-age-calculator#readme"
+}
