@@ -1,6 +1,3 @@
-// Karma configuration
-// Generated on Wed Jan 03 2018 10:43:08 GMT-0800 (PST)
-
 module.exports = function(config) {
   config.set({
     basePath: '',

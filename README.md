@@ -32,7 +32,7 @@ This app is a calculator that determines a person's age in various ways: in seco
 
 | Spec Description |  Input | Output  |
 |---|---|---|
-| If a user enters a no information for their birthday an error will display | (na) | Enter your bday in the correct format |
+| If a user enters a no information for their birthday an error will display | (na) | Enter your bday first |
 | If a user enters a date in an incorrect format a message will display | 1990-244-44 | Enter your bday in the correct format |
 | If a user enters a bday later than the current date an error will display | 1-1-2050 | Enter the year you were born. |
 | If a user enters a correct date in the past a number in years will return | 1-1-1984 | 34 |
