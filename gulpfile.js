@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
+var jshint = require('gulp-jshint');
 var babelify = require('babelify');
 var buildProduction = utilities.env.production;
 var lib = require('bower-files')({
@@ -22,6 +23,12 @@ var lib = require('bower-files')({
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
 
 gulp.task('concatInterface', function() {
   return gulp.src(['./js/*-interface.js'])
@@ -52,7 +59,6 @@ gulp.task('bowerJS', function () {
     .pipe(gulp.dest('./build/js'));
 });
 
-// seek out css folders and compile them into build/css
 gulp.task('bowerCSS', function () {
   return gulp.src(lib.ext('css').files)
     .pipe(concat('vendor.css'))
@@ -65,6 +71,7 @@ gulp.task("clean", function(){
   return del(['build', 'tmp']);
 });
 
+// We'll put this at the end of our file, since it will use our other tasks.
 gulp.task('build', ['clean'], function(){
   if (buildProduction) {
     gulp.start('minifyScripts');
