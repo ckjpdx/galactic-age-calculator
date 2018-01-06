@@ -21,23 +21,38 @@
   </form>
   <h2 id="age-in-seconds">Your age in seconds is: <span></span></h2>
   <h1>Your age, in years, relative to these planets:</h1>
-  <div>
-    <h2>
-      Earth: <span id="planet-age-0"></span>
-    </h2>
-    <h2>
-      Mercury: <span id="planet-age-1"></span>
-    </h2>
-    <h2>
-      Venus: <span id="planet-age-2"></span>
-    </h2>
-    <h2>
-      Mars: <span id="planet-age-3"></span>
-    </h2>
-    <h2>
-      Jupiter: <span id="planet-age-4"></span>
-    </h2>
-  </div>
-  <h2>Your estimated time in planet years until death: <span id="life-remaining"></span></h2>
+  <table style="width:100%">
+    <tr>
+      <th>Planet Name</th>
+      <th>Planet-Age</th>
+      <th>Estimated Life-Time Remaining</th>
+    </tr>
+    <tr>
+      <td>Earth</td>
+      <td id="planet-age-0"></td>
+      <td id="planet-life-remaining-0"></td>
+    </tr>
+    <tr>
+      <td>Mercury</td>
+      <td id="planet-age-1"></td>
+      <td id="planet-life-remaining-1"></td>
+    </tr>
+    <tr>
+      <td>Venus</td>
+      <td id="planet-age-2"></td>
+      <td id="planet-life-remaining-2"></td>
+    </tr>
+    <tr>
+      <td>Mars</td>
+      <td id="planet-age-3"></td>
+      <td id="planet-life-remaining-3"></td>
+    </tr>
+    <tr>
+      <td>Jupiter</td>
+      <td id="planet-age-4"></td>
+      <td id="planet-life-remaining-4"></td>
+    </tr>
+  </table>
+  <h2 id="life-expectancy-warning"></h2>
   </body>
 </html>

@@ -5,10 +5,8 @@ $(document).ready(function(){
   $('button#submit-info').click(function(){
     ageObj.userBday = $('#input-bday').val();
     ageObj.lifeExpectancy = $('#input-life-expectancy').val();
-    console.log(ageObj.userBday);console.log(ageObj.lifeExpectancy);
     if (ageObj.userBday && ageObj.lifeExpectancy) {
       ageObj.userAgeSeconds = getAgeSeconds(ageObj);
-      console.log(ageObj.userAgeSeconds);
       if (!isNaN(ageObj.userAgeSeconds) && ageObj.userAgeSeconds > 0) {
         $('#age-in-seconds span').text(ageObj.userAgeSeconds);
         ageObj = agesOnOtherPlanets(ageObj);
@@ -16,6 +14,12 @@ $(document).ready(function(){
         for (let i = 0; i < 5; i++) {
           console.log(i);console.log(ageObj.ageArray[i]);
           $('#planet-age-' + i).text(ageObj.ageArray[i]);
+          $('#planet-life-remaining-' + i ).text(ageObj.lifeRemainingArray[i]);
+          if (ageObj.ageArray[0] > ageObj.lifeExpectancy) {
+            $('#life-expectancy-warning').text('Warning! You are over the age expectancy and may die at any moment. Computer recommends sending goodbyes to loved ones ASAP.');
+          } else {
+            $('#life-expectancy-warning').empty();
+          }
         }
       } else {
         alert('Enter your bday in the correct format');
