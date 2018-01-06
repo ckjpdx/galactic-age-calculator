@@ -1,10 +1,10 @@
-import { getAgeSeconds, agesOnOtherPlanets } from './../js/age-calculator.js';
+import { AgeObj, getAgeSeconds, agesOnOtherPlanets } from './../js/age-calculator.js';
 
 $(document).ready(function(){
-  let ageObj = {};
   $('button#submit-info').click(function(){
-    ageObj.userBday = $('#input-bday').val();
-    ageObj.lifeExpectancy = $('#input-life-expectancy').val();
+    let userBday = $('#input-bday').val();
+    let lifeExpectancy = $('#input-life-expectancy').val();
+    let ageObj = new AgeObj(userBday, lifeExpectancy);
     if (ageObj.userBday && ageObj.lifeExpectancy) {
       ageObj.userAgeSeconds = getAgeSeconds(ageObj);
       if (!isNaN(ageObj.userAgeSeconds) && ageObj.userAgeSeconds > 0) {
