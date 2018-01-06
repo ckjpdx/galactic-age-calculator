@@ -17,10 +17,10 @@ export function agesOnOtherPlanets(ageObj){
   let ageInJupiterYears = Math.round(ageInEarthYears / 11.8 * 100) / 100;
   ageObj.ageArray = [ageInEarthYears, ageInMercuryYears, ageInVenusYears, ageInMarsYears, ageInJupiterYears];
   let lifeRemainingEarth = Math.round((ageObj.lifeExpectancy - ageInEarthYears) * 100) / 100;
-  let lifeRemainingMercury = Math.round((ageObj.lifeExpectancy * 0.24 - ageInMercuryYears) * 100) / 100;
-  let lifeRemainingVenus = Math.round((ageObj.lifeExpectancy * 0.62 - ageInVenusYears) * 100) / 100;
-  let lifeRemainingMars = Math.round((ageObj.lifeExpectancy * 1.88 - ageInMarsYears) * 100) / 100;
-  let lifeRemainingJupiter = Math.round((ageObj.lifeExpectancy * 11.86 - ageInJupiterYears) * 100) / 100;
+  let lifeRemainingMercury = Math.round((ageObj.lifeExpectancy / 0.24 - ageInMercuryYears) * 100) / 100;
+  let lifeRemainingVenus = Math.round((ageObj.lifeExpectancy / 0.62 - ageInVenusYears) * 100) / 100;
+  let lifeRemainingMars = Math.round((ageObj.lifeExpectancy / 1.88 - ageInMarsYears) * 100) / 100;
+  let lifeRemainingJupiter = Math.round((ageObj.lifeExpectancy / 11.86 - ageInJupiterYears) * 100) / 100;
   ageObj.lifeRemainingArray = [lifeRemainingEarth, lifeRemainingMercury, lifeRemainingVenus, lifeRemainingMars, lifeRemainingJupiter];
   return ageObj;
 }
