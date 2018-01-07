@@ -22,19 +22,22 @@ export class AgeObj {
 
 export function runTheNumbers(ageObj) {
   if (ageObj.userBday && ageObj.lifeExpectancy) {
-    ageObj.userAgeSeconds = moment().diff(ageObj.userBday, 'seconds');
-    if (!isNaN(ageObj.userAgeSeconds) && ageObj.userAgeSeconds > 0) {
-      $('#age-in-seconds span').text(ageObj.userAgeSeconds);
-      ageObj.getAgesOnOtherPlanets();
-      console.log(ageObj.ageArray);console.log(ageObj.lifeRemainingArray);
-      for (let i = 0; i < 5; i++) {
-        console.log(i);console.log(ageObj.ageArray[i]);
-        $('#planet-age-' + i).text(ageObj.ageArray[i]);
-        $('#planet-life-remaining-' + i ).text(ageObj.lifeRemainingArray[i]);
-        if (ageObj.ageArray[0] > ageObj.lifeExpectancy) {
-          $('#life-expectancy-warning').text('Warning! You are over the age expectancy and may die at any moment. Computer recommends sending goodbyes to loved ones ASAP.');
-        } else {
-          $('#life-expectancy-warning').empty();
+    const checkUserBdayRegex = /\d{2}-\d{2}-\d{4}/g;
+    if (checkUserBdayRegex.test(ageObj.userBday)) {
+      ageObj.userAgeSeconds = moment().diff(ageObj.userBday, 'seconds');
+      if (!isNaN(ageObj.userAgeSeconds) && ageObj.userAgeSeconds > 0) {
+        $('#age-in-seconds span').text(ageObj.userAgeSeconds);
+        ageObj.getAgesOnOtherPlanets();
+        console.log(ageObj.ageArray);console.log(ageObj.lifeRemainingArray);
+        for (let i = 0; i < 5; i++) {
+          console.log(i);console.log(ageObj.ageArray[i]);
+          $('#planet-age-' + i).text(ageObj.ageArray[i]);
+          $('#planet-life-remaining-' + i ).text(ageObj.lifeRemainingArray[i]);
+          if (ageObj.ageArray[0] > ageObj.lifeExpectancy) {
+            $('#life-expectancy-warning').text('Warning! You are over the age expectancy and may die at any moment. Computer recommends sending goodbyes to loved ones ASAP.');
+          } else {
+            $('#life-expectancy-warning').empty();
+          }
         }
       }
     } else {
