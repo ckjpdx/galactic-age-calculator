@@ -34,8 +34,9 @@ This app is a calculator that determines a person's age in various ways: in seco
 |---|---|---|
 | If a user enters a no information for their birthday an error will display | (na) | Enter your bday first |
 | If a user enters a date in an incorrect format a message will display | 1990-244-44 | Enter your bday in the correct format |
-| If a user enters a bday later than the current date an error will display | 1-1-2050 | Enter the year you were born. |
-| If a user enters a correct date in the past a number in years will return | 1-1-1984 | 34 |
+| If a user enters a bday later than the current date an error will display | 1-1-2050 | You can't be born in the future! |
+| If a user enters a correct date a number in seconds will be returned | 1-1-1984 | 34 |
+| If a user enters a life expectancy less than their current age a message will appear telling them they may die at any moment. | 90 | 'Warning! You are over the age expectancy and may die at any moment. Computer recommends sending goodbyes to loved ones ASAP' |
 
   * Take an age from the user via form and convert it into seconds (backend logic). Input is a number in years and output is a number in seconds.
     * Return the age of the user in Mercury years
@@ -50,7 +51,7 @@ This app is a calculator that determines a person's age in various ways: in seco
 | If a 30 year old user enters anything other than a number they will receive an error message.  | fifty | "Enter a valid number" |
 | If a 30 year old user enters a number less than 1, they will receive an error message. | 0 | "Enter a valid number" |
 | If a 30 year old user enters '80', a number of '50' will be returned. | 80 | 50 |
-| If a 30 year old user enters '20', a number of '-10' will be returned and a message will appear telling them they may die at any moment. | 20 | -10 |
+
 
 3. Integration
   * JavaScript and Sass files are linked in the head of index.html and are accessed once build task has ran.

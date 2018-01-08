@@ -22,30 +22,32 @@ export class AgeObj {
 
 export function runTheNumbers(ageObj) {
   if (ageObj.userBday && ageObj.lifeExpectancy) {
-    const checkUserBdayRegex = /\d{2}-\d{2}-\d{4}/g;
+    const checkUserBdayRegex = /^\d{2}-\d{2}-\d{4}$/;
     if (checkUserBdayRegex.test(ageObj.userBday)) {
       ageObj.userAgeSeconds = moment().diff(ageObj.userBday, 'seconds');
-      if (!isNaN(ageObj.userAgeSeconds) && ageObj.userAgeSeconds > 0) {
+      if (ageObj.userAgeSeconds > 0) {
         $('#age-in-seconds span').text(ageObj.userAgeSeconds);
         ageObj.getAgesOnOtherPlanets();
-        console.log(ageObj.ageArray);console.log(ageObj.lifeRemainingArray);
         for (let i = 0; i < 5; i++) {
-          console.log(i);console.log(ageObj.ageArray[i]);
           $('#planet-age-' + i).text(ageObj.ageArray[i]);
           $('#planet-life-remaining-' + i ).text(ageObj.lifeRemainingArray[i]);
           if (ageObj.ageArray[0] > ageObj.lifeExpectancy) {
-            $('#life-expectancy-warning').text('Warning! You are over the age expectancy and may die at any moment. Computer recommends sending goodbyes to loved ones ASAP.');
+            ageObj.alertMsg = `Warning! You are over the age expectancy and may die at any moment. Computer recommends sending goodbyes to loved ones ASAP.`;
+            $('#life-expectancy-warning').text(ageObj.alertMsg);
           } else {
             $('#life-expectancy-warning').empty();
           }
         }
+      } else {
+        ageObj.alertMsg = `You can't be born in the future!`;
+        alert(ageObj.alertMsg);
       }
     } else {
-      ageObj.alertMsg = 'Enter your bday in the correct format';
+      ageObj.alertMsg = `Enter your bday in the correct format`;
       alert(ageObj.alertMsg);
     }
   } else {
-    ageObj.alertMsg = 'Enter your bday first';
+    ageObj.alertMsg = `Enter your bday first`;
     alert(ageObj.alertMsg);
   }
 }
